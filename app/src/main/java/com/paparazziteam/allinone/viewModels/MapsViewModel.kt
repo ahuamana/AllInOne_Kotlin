@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModel
 import com.paparazziteam.allinone.models.WeatherInfo
 import com.paparazziteam.allinone.services.WeatherService
 import com.paparazziteam.allinone.utils.Empty
-import com.paparazziteam.allinone.utils.Event
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -19,8 +18,7 @@ class MapsViewModel: ViewModel() {
     var longitude = String.Empty
 
 
-
-    private val _city = MutableLiveData<String>()
+    val _city = MutableLiveData<String>()
     val city: LiveData<String> = _city
 
     private val _country = MutableLiveData<String>()
@@ -45,7 +43,7 @@ class MapsViewModel: ViewModel() {
     val dt = _dt
 
 
-    fun getWeatherData() {
+    fun getWeatherData(){
         val retrofit = Retrofit.Builder()
             .baseUrl(OPEN_WEATHER_MAP_BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
@@ -59,11 +57,14 @@ class MapsViewModel: ViewModel() {
                 if (response.code() == SUCCESS_STATUS) {
                     val weatherInfo = response.body()
 
-                    android.util.Log.e("DAT7A",""+response.body())
+                    android.util.Log.e("DATA",""+response.body())
 
                     if (weatherInfo != null) {
 //						_city.value = "${weatherInfo.name}, ${weatherInfo.sys.country}"
                         _city.value = weatherInfo.name
+
+                        android.util.Log.e("DATA","City: "+_city.value)
+
                         _country.value = weatherInfo.sys.country ?: String.Empty
                         //_dt.value = convertFromEpoch(weatherInfo.dt)
                         //_temperature.value = convertToCelcius(weatherInfo.main.temp)
@@ -72,6 +73,8 @@ class MapsViewModel: ViewModel() {
                         //_pressure.value = weatherInfo.main.pressure.roundToInt()
                         //_humidityStatus.value = weatherInfo.main.humidity.roundToInt()
                         //_windStatus.value = convertToKmPerHour(weatherInfo.wind.speed)
+
+
                     }
                 }
             }
