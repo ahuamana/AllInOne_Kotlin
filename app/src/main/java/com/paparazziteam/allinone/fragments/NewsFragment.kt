@@ -35,7 +35,6 @@ class NewsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        newsViewModel.newsList
 
         newsViewModel.newsList.observe(viewLifecycleOwner, {
             val adapter = NewsAdapter(it)

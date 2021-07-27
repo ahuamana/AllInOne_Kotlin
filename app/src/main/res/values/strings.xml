@@ -1,26 +1,12 @@
 <resources>
     <string name="app_name">AllinOne</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
+    <string name="title_news">Noticias</string>
     <string name="title_notifications">Notifications</string>
+    <string name="title_maps">Mapa</string>
 
 
     <string name="welcome_message">BIENVENIDO A \nALL IN ONE</string>
-    <string name="info">Información sobre la ubicación actual</string>
-    <string name="weather_info">Información sobre el tiempo</string>
-    <string name="title_weather">Información del Tiempo</string>
-    <string name="city">%s, %s</string>
-    <string name="weather_info_item">Weather info item</string>
     <string name="more_info">MAS INFO +</string>
-    <string name="temp_status">%d °C</string>
-    <string name="pressure">Presión: %d mbar</string>
-    <string name="humidity_status">Humedad: %d%%</string>
-    <string name="wind_status">Viento: a %d km/h</string>
-    <string name="info_city">Dato curioso</string>
-    <string name="weather_info_city">Información del tiempo</string>
-    <string name="ok_button">Aceptar</string>
-    <string name="curious_fact">Curiosidad</string>
-    <string name="show_curious_fact">Mostrar dato curioso</string>
-    <string name="desc">TotalOne es una app desarrollada para el curso de Arquitectura Orientada a Servicios</string>
-    <string name="logo_desc">Descripción del logo</string>
+
 </resources>
