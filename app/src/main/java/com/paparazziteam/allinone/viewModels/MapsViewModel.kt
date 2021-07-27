@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.paparazziteam.allinone.models.WeatherInfo
 import com.paparazziteam.allinone.services.WeatherService
-import com.paparazziteam.allinone.utils.Empty
+import com.paparazziteam.allinone.utils.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -17,8 +17,7 @@ class MapsViewModel: ViewModel() {
     var latitude = String.Empty
     var longitude = String.Empty
 
-
-    val _city = MutableLiveData<String>()
+    private val _city = MutableLiveData<String>()
     val city: LiveData<String> = _city
 
     private val _country = MutableLiveData<String>()
@@ -66,13 +65,13 @@ class MapsViewModel: ViewModel() {
                         android.util.Log.e("DATA","City: "+_city.value)
 
                         _country.value = weatherInfo.sys.country ?: String.Empty
-                        //_dt.value = convertFromEpoch(weatherInfo.dt)
-                        //_temperature.value = convertToCelcius(weatherInfo.main.temp)
-                        //_weatherStatus.value =
-                        //    weatherInfo.weathers[0].description?.toTitleCase() ?: String.Empty
-                        //_pressure.value = weatherInfo.main.pressure.roundToInt()
-                        //_humidityStatus.value = weatherInfo.main.humidity.roundToInt()
-                        //_windStatus.value = convertToKmPerHour(weatherInfo.wind.speed)
+                        _dt.value = convertFromEpoch(weatherInfo.dt)
+
+                        _temperature.value = convertToCelcius(weatherInfo.main.temp)
+                        _weatherStatus.value = weatherInfo.weathers[0].description?:String.Empty
+                        _pressure.value = weatherInfo.main.pressure.toInt()
+                        _humidityStatus.value = weatherInfo.main.humidity.toInt()
+                        _windStatus.value = convertToKmPerHour(weatherInfo.wind.speed)
 
 
                     }
