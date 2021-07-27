@@ -14,9 +14,6 @@ class NewsItemViewModel (context: Context) {
 
     private val _context = context;
 
-    private val _btnMoreInfo = MutableLiveData<String>()
-    val btnMoreInfo: LiveData<String> = _btnMoreInfo
-
 
     fun setNewsItem(value: NewsItem)
     {
@@ -27,6 +24,6 @@ class NewsItemViewModel (context: Context) {
     fun addOnClickMoreInfo()
     {
        Toast.makeText(_context,"Pronto Implementaremos mas funcionalidades!",Toast.LENGTH_SHORT).show()
-       Log.e("BUTTOM","BUTTOM: Hiciste click");
+       Log.e("BUTTON","BUTTOM: Hiciste click");
     }
 }
