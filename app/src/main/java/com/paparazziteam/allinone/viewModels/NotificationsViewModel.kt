@@ -1,4 +1,4 @@
-package com.paparazziteam.allinone.ui.notifications
+package com.paparazziteam.allinone.viewModels
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

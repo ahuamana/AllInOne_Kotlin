@@ -7,6 +7,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.paparazziteam.allinone.R
 import com.paparazziteam.allinone.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
