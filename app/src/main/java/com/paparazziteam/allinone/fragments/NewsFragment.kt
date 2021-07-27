@@ -29,6 +29,7 @@ class NewsFragment : Fragment() {
 
 
 
+
         return binding?.root
     }
 
@@ -41,6 +42,9 @@ class NewsFragment : Fragment() {
 
             binding?.recyclerView?.adapter = adapter
         })
+
+
+
 
 
     }
