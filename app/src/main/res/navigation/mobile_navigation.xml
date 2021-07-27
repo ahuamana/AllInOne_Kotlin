@@ -14,12 +14,12 @@
     <fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.paparazziteam.allinone.fragments.NewsFragment"
-        android:label="@string/title_dashboard"
+        android:label="@string/title_news"
         tools:layout="@layout/fragment_news" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.paparazziteam.allinone.fragments.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_maps"
+        android:name="com.paparazziteam.allinone.fragments.MapsFragment"
+        android:label="@string/title_maps"
+        tools:layout="@layout/fragment_maps" />
 </navigation>
