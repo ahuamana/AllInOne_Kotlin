@@ -8,5 +8,19 @@
 
     <string name="welcome_message">BIENVENIDO A \nALL IN ONE</string>
     <string name="more_info">MAS INFO +</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="info">Información sobre la ubicación actual</string>
+    <string name="weather_info">Información sobre el tiempo</string>
+    <string name="title_weather">Información del Tiempo</string>
+    <string name="city">%s, %s</string>
+    <string name="weather_info_item">Weather info item</string>
+    <string name="temp_status">%d °C</string>
+    <string name="pressure">Presión: %d mbar</string>
+    <string name="humidity_status">Humedad: %d%%</string>
+    <string name="wind_status">Viento: a %d km/h</string>
+    <string name="info_city">Dato curioso</string>
+    <string name="weather_info_city">Información del tiempo</string>
+
 
 </resources>
