@@ -12,8 +12,9 @@ import com.paparazziteam.allinone.viewModels.NewsViewModel
 
 class NewsFragment : Fragment() {
     // coneccting with the viewmodel
-    private val newsViewModel by viewModels<NewsViewModel>()
-    private var binding: FragmentNewsBinding? = null
+    private val newsViewModel:NewsViewModel by viewModels<NewsViewModel>()
+    private var _binding: FragmentNewsBinding? = null
+    var binding: FragmentNewsBinding? = _binding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,6 +34,8 @@ class NewsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        newsViewModel.newsList
 
         newsViewModel.newsList.observe(viewLifecycleOwner, {
             val adapter = NewsAdapter(it)
