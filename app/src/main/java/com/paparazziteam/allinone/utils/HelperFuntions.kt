@@ -1,10 +1,9 @@
 package com.paparazziteam.allinone.utils
 
 import android.widget.ImageView
-import androidx.fragment.app.Fragment
+import androidx.databinding.Bindable
 import com.bumptech.glide.Glide
 import com.paparazziteam.allinone.R
-import com.paparazziteam.allinone.activities.MainActivity
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.math.roundToInt
@@ -28,6 +27,7 @@ fun setImageSrc(imageView: ImageView, src: String?) {
         imageView.setImageResource(R.drawable.ic_launcher_background)
     }
 }
+
 
 fun convertToCelcius(temp: Float) = (temp - 273.15f).roundToInt()
 

@@ -1,5 +1,6 @@
 package com.paparazziteam.allinone.viewModels
 
+import androidx.databinding.Bindable
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -42,7 +43,14 @@ class MapsViewModel: ViewModel() {
     val dt = _dt
 
 
+    val showProgressBarUserInfo: MutableLiveData<Boolean> = MutableLiveData()
+
+
+
     fun getWeatherData(){
+
+        showProgressBarUserInfo.value = true
+
         val retrofit = Retrofit.Builder()
             .baseUrl(OPEN_WEATHER_MAP_BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
@@ -59,11 +67,9 @@ class MapsViewModel: ViewModel() {
                     android.util.Log.e("DATA",""+response.body())
 
                     if (weatherInfo != null) {
-//						_city.value = "${weatherInfo.name}, ${weatherInfo.sys.country}"
+//
                         _city.value = weatherInfo.name
-
                         android.util.Log.e("DATA","City: "+_city.value)
-
                         _country.value = weatherInfo.sys.country ?: String.Empty
                         _dt.value = convertFromEpoch(weatherInfo.dt)
 
@@ -73,6 +79,7 @@ class MapsViewModel: ViewModel() {
                         _humidityStatus.value = weatherInfo.main.humidity.toInt()
                         _windStatus.value = convertToKmPerHour(weatherInfo.wind.speed)
 
+                        showProgressBarUserInfo.value = false
 
                     }
                 }
@@ -80,6 +87,8 @@ class MapsViewModel: ViewModel() {
 
             override fun onFailure(call: Call<WeatherInfo>, t: Throwable) {
                 android.util.Log.d("ERROR", t.message ?: "")
+
+                showProgressBarUserInfo.value = false
             }
         })
 
