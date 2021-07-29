@@ -15,3 +15,5 @@ Caracteristicas:
 - Retrofit
 
 - MVVM
+
+- Data Binding
